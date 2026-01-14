@@ -3,15 +3,15 @@
 A production-ready Node.js REST API built with **Clean Architecture** and industry best practices. This project demonstrates professional backend development patterns and is perfect for showcasing your skills.
 
 ## 📋 Table of Contents
-- [Features](#features)
-- [Architecture](#architecture)
-- [Design Patterns](#design-patterns)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Deployment](#deployment)
+- [Features](##features)
+- [Architecture](##architecture)
+- [Design Patterns](##design-patterns)
+- [Tech Stack](##tech-stack)
+- [Project Structure](##project-structure)
+- [Getting Started](##getting-started)
+- [API Documentation](##api-documentation)
+- [Testing](##testing)
+- [Deployment](##deployment)
 
 ## ✨ Features
 

@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:6
+    container_name: task_management_mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: task_management_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - task_management_network
+
+  # Node.js Application
+  app:
+    build: .
+    container_name: task_management_api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      MONGODB_URI: mongodb://mongodb:27017/task_management_db
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+    depends_on:
+      - mongodb
+    networks:
+      - task_management_network
+    volumes:
+      - ./logs:/app/logs
+
+networks:
+  task_management_network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
